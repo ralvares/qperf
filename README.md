@@ -3,8 +3,8 @@ Basic network performance testing
 
 Change SERVER_ADDR in the client deployment config to your cluster's record.
 
-## 1 Example output from AKS (Azure managed Kubernetes)
-Standard D2 v2 (2 vcpus, 7 GB memory)
+## 1 Example output
+(2 vcpus, 7 GB memory)
 ```
 iteration:1  t:16     latency  =  171 us
 iteration:2  t:39     latency  =  225 us
