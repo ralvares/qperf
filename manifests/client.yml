@@ -18,7 +18,7 @@ spec:
     spec:
       containers:
       - name: qperf-client
-        image: quay.io/ralvares/qperf/qperf:latest
+        image: quay.io/ralvares/qperf:latest
         env:
         - name: SERVICE_TYPE
           value: "ping"

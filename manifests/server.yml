@@ -18,7 +18,7 @@ spec:
     spec:
       containers:
       - name: qperf
-        image: quay.io/ralvares/qperf/qperf:latest
+        image: quay.io/ralvares/qperf:latest
         ports:
         - containerPort: 8080
         env:
