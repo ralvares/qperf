@@ -9,7 +9,7 @@ echo "SERVER_PORT ${SERVER_PORT}"
 
 
 if [ ${SERVICE_TYPE} == "server" ] ; then
-  qperf -lp ${SERVER_PORT}
+  qperf
 elif [ ${SERVICE_TYPE} == "client" ] ; then
   while true ; do
     sleep 1
