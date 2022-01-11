@@ -2,7 +2,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: server
+  name: qperf-server
   labels:
     app: qperf-server
 spec:
@@ -29,13 +29,15 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: server
   labels:
     app: qperf-server
+  name: qperf-server
 spec:
   ports:
-  - port: 19765
-    name: server
-  clusterIP: None
+  - name: "19765"
+    port: 19765
+    protocol: TCP
+    targetPort: 19765
   selector:
     app: qperf-server
+  type: ClusterIP
