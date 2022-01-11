@@ -2,28 +2,26 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: qperf-client
+  name: perf-client
   labels:
-    app: qperf-client
+    app: perf-client
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: qperf-client
+      app: perf-client
   template:
     metadata:
       labels:
-        app: qperf-client
+        app: perf-client
     spec:
       containers:
-      - name: qperf-client
+      - name: perf-client
         image: quay.io/ralvares/qperf:latest
         env:
         - name: SERVICE_TYPE
-          value: "client"
+          value: "iperf"
         - name: SERVER_ADDR
-          value: "qperf-server"
-        - name: SERVER_PORT
-          value: "19765"
-        - name: QPERF_INTERVAL
+          value: "perf-server"
+        - name: PERF_INTERVAL
           value: "10-60"
