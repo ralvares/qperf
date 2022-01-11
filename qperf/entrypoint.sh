@@ -5,7 +5,6 @@ t=10
 
 echo "Running as ${SERVICE_TYPE}"
 echo "SERVER_ADDR ${SERVER_ADDR}"
-echo "SERVER_PORT ${SERVER_PORT}"
 
 
 if [ ${SERVICE_TYPE} == "server" ] ; then
@@ -14,7 +13,7 @@ elif [ ${SERVICE_TYPE} == "qperf" ] ; then
   while true ; do
     sleep 1
     t=$(shuf -i ${PERF_INTERVAL} -n 1)
-      lat=$(qperf -t ${t} --use_bits_per_sec ${SERVER_ADDR} -lp ${SERVER_PORT} tcp_lat | grep "latency")
+      lat=$(qperf -t ${t} --use_bits_per_sec ${SERVER_ADDR} tcp_lat | grep "latency")
     echo "iteration:${iteration}  t:${t} ${lat}"
     let iteration++
   done
@@ -22,7 +21,7 @@ elif [ ${SERVICE_TYPE} == "iperf" ] ; then
   while true ; do
     sleep 1
     t=$(shuf -i ${PERF_INTERVAL} -n 1)
-      iperf3 -t ${t} -i 1 -c ${SERVER_PORT}
+      iperf3 -t ${t} -i 1 -c ${SERVER_ADDR}
     let iteration++
   done
 elif [ ${SERVICE_TYPE} == "ping" ] ; then
