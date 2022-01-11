@@ -34,6 +34,10 @@ metadata:
   name: qperf-server
 spec:
   ports:
+  - name: "19766"
+    port: 19766
+    protocol: TCP
+    targetPort: 19766
   - name: "19765"
     port: 19765
     protocol: TCP
