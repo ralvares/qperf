@@ -24,6 +24,6 @@ spec:
         - name: SERVER_ADDR
           value: "server"
         - name: SERVER_PORT
-          value: "8080"
+          value: "19765"
         - name: QPERF_INTERVAL
           value: "10-60"
