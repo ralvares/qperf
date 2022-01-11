@@ -2,36 +2,32 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: qperf-server
+  name: perf-server
   labels:
-    app: qperf-server
+    app: perf-server
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: qperf-server
+      app: perf-server
   template:
     metadata:
       labels:
-        app: qperf-server
+        app: perf-server
     spec:
       containers:
-      - name: qperf
+      - name: perf
         image: quay.io/ralvares/qperf:latest
-        ports:
-        - containerPort: 19765
         env:
         - name: SERVICE_TYPE
           value: "server"
-        - name: SERVER_PORT
-          value: "19765"
 ---
 apiVersion: v1
 kind: Service
 metadata:
   labels:
-    app: qperf-server
-  name: qperf-server
+    app: perf-server
+  name: perf-server
 spec:
   ports:
   - name: "19766"
@@ -42,6 +38,10 @@ spec:
     port: 19765
     protocol: TCP
     targetPort: 19765
+  - name: "5201"
+    port: 5201
+    protocol: TCP
+    targetPort: 5201
   selector:
-    app: qperf-server
+    app: perf-server
   type: ClusterIP
