@@ -22,7 +22,7 @@ spec:
         - name: SERVICE_TYPE
           value: "client"
         - name: SERVER_ADDR
-          value: "server"
+          value: "qperf-server"
         - name: SERVER_PORT
           value: "19765"
         - name: QPERF_INTERVAL
