@@ -8,7 +8,7 @@ echo "SERVER_ADDR ${SERVER_ADDR}"
 
 
 if [ ${SERVICE_TYPE} == "server" ] ; then
-  qperf && iperf3 -s
+  qperf & iperf3 -s
 elif [ ${SERVICE_TYPE} == "qperf" ] ; then
   while true ; do
     sleep 1
