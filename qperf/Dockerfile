@@ -10,6 +10,6 @@ RUN chmod +x /entrypoint.sh
 
 
 USER 1001
-EXPOSE 8080
+EXPOSE 19765
 
 ENTRYPOINT [ "/entrypoint.sh" ]
