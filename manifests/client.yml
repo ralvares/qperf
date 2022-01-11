@@ -20,7 +20,7 @@ spec:
         image: quay.io/ralvares/qperf:latest
         env:
         - name: SERVICE_TYPE
-          value: "ping"
+          value: "client"
         - name: SERVER_ADDR
           value: "server"
         - name: SERVER_PORT
